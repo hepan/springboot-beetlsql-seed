@@ -3,7 +3,10 @@ package org.hp.test.beetlsql.seed.web;
 import org.beetl.sql.core.engine.PageQuery;
 import org.hp.test.beetlsql.seed.dao.AdminDao;
 import org.hp.test.beetlsql.seed.model.Admin;
+import org.hp.test.beetlsql.seed.service.AdminServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -20,22 +23,21 @@ import java.util.List;
 public class AdminController {
 
     @Autowired
-    private AdminDao adminDao;
+    private AdminServiceInterface adminService;
 
 
     @RequestMapping(method = RequestMethod.GET)
     public List<Admin> listAll() {
-        return adminDao.all();
+        return adminService.findAll();
     }
 
     @RequestMapping(value = "page/{page}/size/{size}",method = RequestMethod.GET)
     public PageQuery<Admin> listAll(@PathVariable long page, @PathVariable long size) {
-        PageQuery<Admin> pq=new PageQuery(page,size);
-        return adminDao.getSQLManager().pageQuery("admin.queryPageAdmin",Admin.class,pq);
+        return adminService.pageQuery(page,size);
     }
 
     @RequestMapping(value = "{id}",method = RequestMethod.GET)
     private Admin detail(@PathVariable Integer id){
-        return adminDao.single(id);
+        return adminService.findById(id);
     }
 }

@@ -13,7 +13,7 @@ spring:
 beetl-beetlsql:
   dev: true
 beetlsql:
-  basePackage: org.hp.test.attendance
+  basePackage: org.hp.test.beetlsql.seed
   nameConversion: org.beetl.sql.core.UnderlinedNameConversion
 beetl:
   enabled: false  #开启页码beetl模板引擎
