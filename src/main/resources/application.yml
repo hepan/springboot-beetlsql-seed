@@ -1,0 +1,19 @@
+server:
+  port: 18070
+spring:
+  application:
+    name: attendance   #工程名
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/attendance
+    username: root
+    password: panpan
+
+
+beetl-beetlsql:
+  dev: true
+beetlsql:
+  basePackage: org.hp.test.attendance
+  nameConversion: org.beetl.sql.core.UnderlinedNameConversion
+beetl:
+  enabled: false  #开启页码beetl模板引擎
