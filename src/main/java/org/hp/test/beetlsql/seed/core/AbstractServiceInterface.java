@@ -1,16 +1,12 @@
 package org.hp.test.beetlsql.seed.core;
 
-import cn.hutool.core.util.StrUtil;
-import com.alibaba.druid.util.StringUtils;
-import org.beetl.ext.fn.StringUtil;
-import org.beetl.sql.core.engine.PageQuery;
-import org.beetl.sql.core.mapper.BaseMapper;
-import org.hp.test.beetlsql.seed.model.Admin;
-import org.springframework.beans.factory.annotation.Autowired;
-
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
+
+import org.beetl.sql.core.engine.PageQuery;
+import org.beetl.sql.core.mapper.BaseMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * 基础service类

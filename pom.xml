@@ -93,6 +93,15 @@
 			<scope>runtime</scope>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc -->
+		<!--<dependency>-->
+			<!--<groupId>com.microsoft.sqlserver</groupId>-->
+			<!--<artifactId>mssql-jdbc</artifactId>-->
+			<!--<version>6.2.0.jre8</version>-->
+			<!--<scope>test</scope>-->
+		<!--</dependency>-->
+
+
 		<!--beetlSQL 相关配置-->
 		<dependency>
 			<groupId>com.ibeetl</groupId>
